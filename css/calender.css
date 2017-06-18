@@ -1,0 +1,76 @@
+body {
+	background-color: #eee;
+}
+.calender {
+	margin: 10px auto;
+	display:　inline-block;
+	width: 1000px;
+	background-color: white;
+	padding: 16px;
+    box-shadow: 0 0 3px #000;
+}
+
+.top {
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	clear: both;
+}
+.top > * {
+	float: left;
+	display: inline-block;
+}
+.top .title {
+	width: calc(100% - 200px);
+}
+.top .btn {
+	width: 200px;
+	text-align: right;
+}
+.arrow {
+	height: 13px;
+}
+.month {
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.weeks, .days {
+	display: table-row;
+}
+
+.weeks div, .days div{
+	display: table-cell;
+	width: calc(100% / 7);
+	border: 1px solid #000;
+}
+
+.weeks > div{
+	height: 35px;
+	line-height: 35px;
+	background-color: #eee;
+	text-align: center;
+}
+
+.days > div {
+	position: relative;
+	height: 100px;
+}
+
+.days > div:after{
+	content: attr(data-y) '/' attr(data-m) '/' attr(data-d);
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: inline-block;
+}
+
+.days > div.not_month{
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #e1e1e1), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #e1e1e1), color-stop(0.75, #e1e1e1), color-stop(0.75, transparent), to(transparent));
+  -webkit-background-size: 20px 20px
+}
+.days > div.today {
+	border: 4px solid black; 
+}
